@@ -9,6 +9,7 @@ const CoinsContext = createContext({})
 export const CoinsProvider = ({ children }) => {
   const [coins, setCoins] = useState({
     data: [],
+    details: {},
     state: ResourceState.PENDING
   });
 
@@ -16,10 +17,11 @@ export const CoinsProvider = ({ children }) => {
     const fetchCoins = async () => {
       try {
         const response = await client.get('coins/markets?vs_currency=eur&per_page=10')
-        setCoins({
+        setCoins(prevCoins => ({
+          ...prevCoins,
           data: response.data,
           state: ResourceState.SUCCESS
-        })
+        }))
       } catch {
         setCoins(prevCoins => ({
           ...prevCoins,
@@ -31,8 +33,55 @@ export const CoinsProvider = ({ children }) => {
     fetchCoins()
   }, [])
 
+  const getDetails = async (coinId) => {
+    if (coins.details[coinId]) {
+      return
+    }
+
+    setCoins(prevCoins => ({
+      ...prevCoins,
+      details: {
+        ...prevCoins.details,
+        [coinId]: {
+          state: ResourceState.PENDING,
+        }
+      }
+    }))
+
+    try {
+      const response = await client.get(`coins/${coinId}`)
+      setCoins(prevCoins => ({
+        ...prevCoins,
+        details: {
+          ...prevCoins.details,
+          [coinId]: {
+            data: response.data,
+            state: ResourceState.SUCCESS
+          }
+        }
+      }))
+    } catch {
+      setCoins(prevCoins => ({
+        ...prevCoins,
+        details: {
+          ...prevCoins.details,
+          [coinId]: {
+            state: ResourceState.ERROR
+          }
+        }
+      }))
+    }
+  }
+
+  const contextValue = {
+    coins,
+    actions: {
+      getDetails
+    }
+  }
+
   return (
-    <CoinsContext.Provider value={coins}>
+    <CoinsContext.Provider value={contextValue}>
       {children}
     </CoinsContext.Provider>
   )

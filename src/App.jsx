@@ -38,11 +38,12 @@ const LoadingMessage = styled.div`
 const ErrorMessage = styled.div`
   font-size: 1.25rem;
   line-height: 1.25;
+  text-align: center;
   color: ${Color.DarkSalmon};
 `
 
 function App() {
-  const coins = useCoins()
+  const { coins } = useCoins()
 
   return (
     <Layout>
