@@ -17,7 +17,25 @@
     },
     "plugins": [
         "react",
-        "react-hooks"
+        "react-hooks",
+        "jest",
+        "testing-library"
+    ],
+    "overrides": [
+      {
+        "files": [
+            "**/__tests__/**/*.js?(x)",
+            "**/?(*.)+(spec|test).js?(x)",
+            "./jest/mocks/jest.setup.js"
+        ],
+        "env": {
+            "jest/globals": true
+        },
+        "extends": [
+            "plugin:jest/recommended",
+            "plugin:testing-library/react"
+        ]
+      }
     ],
     "rules": {
         "react/react-in-jsx-scope": "off",

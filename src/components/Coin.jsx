@@ -18,7 +18,6 @@ grid-template-areas:
 column-gap: 1rem;
 width: 100%;
 padding: 0.5rem 1.25rem;
-margin-bottom: 0.5rem;
 border-radius: 1rem;
 color: ${Color.DimGray};
 background-color: ${Color.White};

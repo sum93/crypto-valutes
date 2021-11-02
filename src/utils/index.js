@@ -9,3 +9,7 @@ export const currencyFormatter = Intl.NumberFormat(
 )
 
 export const dateFormatter = Intl.DateTimeFormat('en-GB')
+
+export const coingecko = (path) => {
+  return new URL(path, 'https://api.coingecko.com/').toString()
+}

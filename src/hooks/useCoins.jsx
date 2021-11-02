@@ -2,8 +2,7 @@ import axios from 'axios'
 import { createContext, useContext, useEffect, useState } from 'react'
 
 import ResourceState from '../constants/ResourceState'
-
-const client = axios.create({ baseURL: 'https://api.coingecko.com/api/v3' })
+import { coingecko } from '../utils'
 
 const CoinsContext = createContext({})
 export const CoinsProvider = ({ children }) => {
@@ -17,7 +16,7 @@ export const CoinsProvider = ({ children }) => {
   useEffect(() => {
     const fetchCoins = async () => {
       try {
-        const response = await client.get('coins/markets?vs_currency=eur&per_page=10')
+        const response = await axios.get(coingecko('api/v3/coins/markets?vs_currency=eur&per_page=10'))
         setCoins(prevCoins => ({
           ...prevCoins,
           ids: response.data.map(({ id }) => id),
@@ -54,7 +53,7 @@ export const CoinsProvider = ({ children }) => {
     }))
 
     try {
-      const response = await client.get(`coins/${coinId}`)
+      const response = await axios.get(coingecko(`api/v3/coins/${coinId}`))
       setCoins(prevCoins => ({
         ...prevCoins,
         details: {

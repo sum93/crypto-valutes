@@ -1,0 +1,12 @@
+{
+  "env": {
+    "test": {
+      "plugins": [
+        "react-require"
+      ],
+      "presets": [
+        "react-app"
+      ]
+    }
+  }
+}
