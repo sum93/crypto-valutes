@@ -1,12 +1,12 @@
-import DOMPurify from "dompurify"
-import styled from "styled-components"
-import { useEffect } from "react"
+import DOMPurify from 'dompurify'
+import styled from 'styled-components'
+import { useEffect } from 'react'
 
-import Breakpoint from "../constants/Breakpoint"
-import Color from "../constants/Color"
-import ResourceState from "../constants/ResourceState"
-import { currencyFormatter, dateFormatter } from "../utils"
-import { useCoins } from "../hooks/useCoins"
+import Breakpoint from '../constants/Breakpoint'
+import Color from '../constants/Color'
+import ResourceState from '../constants/ResourceState'
+import { currencyFormatter, dateFormatter } from '../utils'
+import { useCoins } from '../hooks/useCoins'
 
 const CoinDetailsWrapper = styled.div`
   grid-area: details;
@@ -98,7 +98,7 @@ const CoinDetails = ({ id }) => {
   const { coins: { details: { [id]: coinDetails } }, actions: { getDetails } } = useCoins()
 
   useEffect(() => {
-    if(!coinDetails) {
+    if (!coinDetails) {
       getDetails(id)
     }
   }, [coinDetails, getDetails, id])
@@ -119,7 +119,7 @@ const CoinDetails = ({ id }) => {
       <DataSegment label="Hashing Algorithm" value={coinDetails.data.hashing_algorithm || '-'} />
       <DataSegment label="Genesis Date" value={dateFormatter.format(new Date(coinDetails.data.genesis_date))} />
       <HomeLink href={coinDetails.data.links.homepage[0]} target="_blank">Homepage</HomeLink>
-      <Description dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(coinDetails.data.description.en)}} />
+      <Description dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(coinDetails.data.description.en) }} />
     </CoinDetailsWrapper>
   )
 }

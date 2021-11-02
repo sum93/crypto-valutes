@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { createContext, useContext, useEffect, useState } from 'react';
+import { createContext, useContext, useEffect, useState } from 'react'
 
 import ResourceState from '../constants/ResourceState'
 
@@ -12,7 +12,7 @@ export const CoinsProvider = ({ children }) => {
     data: {},
     details: {},
     state: ResourceState.PENDING
-  });
+  })
 
   useEffect(() => {
     const fetchCoins = async () => {
@@ -48,7 +48,7 @@ export const CoinsProvider = ({ children }) => {
       details: {
         ...prevCoins.details,
         [coinId]: {
-          state: ResourceState.PENDING,
+          state: ResourceState.PENDING
         }
       }
     }))
