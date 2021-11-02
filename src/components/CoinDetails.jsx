@@ -1,11 +1,12 @@
 import DOMPurify from "dompurify"
 import styled from "styled-components"
-import Breakpoint from "../constants/Breakpoint"
+import { useEffect } from "react"
 
+import Breakpoint from "../constants/Breakpoint"
 import Color from "../constants/Color"
 import ResourceState from "../constants/ResourceState"
-import { useCoins } from "../hooks/useCoins"
 import { currencyFormatter, dateFormatter } from "../utils"
+import { useCoins } from "../hooks/useCoins"
 
 const CoinDetailsWrapper = styled.div`
   grid-area: details;
@@ -94,13 +95,19 @@ const DataSegment = ({ label, value }) => (
 )
 
 const CoinDetails = ({ id }) => {
-  const { coins: { details: { [id]: { data, state } } } } = useCoins()
+  const { coins: { details: { [id]: coinDetails } }, actions: { getDetails } } = useCoins()
 
-  if (state === ResourceState.PENDING) {
+  useEffect(() => {
+    if(!coinDetails) {
+      getDetails(id)
+    }
+  }, [coinDetails, getDetails, id])
+
+  if (!coinDetails || coinDetails.state === ResourceState.PENDING) {
     return <LoadingMessage>Loading...</LoadingMessage>
   }
 
-  if (state === ResourceState.ERROR) {
+  if (coinDetails.state === ResourceState.ERROR) {
     return <ErrorMessage>There was an error loading the details.</ErrorMessage>
   }
 
@@ -108,11 +115,11 @@ const CoinDetails = ({ id }) => {
     <CoinDetailsWrapper>
       <DataSegment
         label="Market Cap"
-        value={currencyFormatter.format(data.market_data.market_cap.eur)} />
-      <DataSegment label="Hashing Algorithm" value={data.hashing_algorithm || '-'} />
-      <DataSegment label="Genesis Date" value={dateFormatter.format(new Date(data.genesis_date))} />
-      <HomeLink href={data.links.homepage[0]} target="_blank">Homepage</HomeLink>
-      <Description dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(data.description.en)}} />
+        value={currencyFormatter.format(coinDetails.data.market_data.market_cap.eur)} />
+      <DataSegment label="Hashing Algorithm" value={coinDetails.data.hashing_algorithm || '-'} />
+      <DataSegment label="Genesis Date" value={dateFormatter.format(new Date(coinDetails.data.genesis_date))} />
+      <HomeLink href={coinDetails.data.links.homepage[0]} target="_blank">Homepage</HomeLink>
+      <Description dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(coinDetails.data.description.en)}} />
     </CoinDetailsWrapper>
   )
 }

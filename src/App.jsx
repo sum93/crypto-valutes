@@ -1,9 +1,7 @@
 import styled from 'styled-components'
 
-import Coin from './components/Coin'
+import Coins from './components/Coins'
 import Color from './constants/Color'
-import ResourceState from './constants/ResourceState'
-import { useCoins } from './hooks/useCoins'
 
 const Layout = styled.main`
   display: flex;
@@ -28,39 +26,13 @@ const Title = styled.h1`
   color: ${Color.DimGray};
 `
 
-const LoadingMessage = styled.div`
-  font-size: 1.25rem;
-  line-height: 5;
-  text-align: center;
-  color: ${Color.HeliotropeGray};
-`
-
-const ErrorMessage = styled.div`
-  font-size: 1.25rem;
-  line-height: 1.25;
-  text-align: center;
-  color: ${Color.DarkSalmon};
-`
-
-function App() {
-  const { coins } = useCoins()
-
-  return (
-    <Layout>
-      <Content>
-        <Title>[Coins]</Title>
-        {coins.state === ResourceState.PENDING && (
-          <LoadingMessage>Loading...</LoadingMessage>
-        )}
-        {coins.state === ResourceState.SUCCESS && coins.data.map((coin) => (
-          <Coin key={coin.id} {...coin} />
-        ))}
-        {coins.state === ResourceState.ERROR && (
-          <ErrorMessage>An error has occurred. Please refresh the page.</ErrorMessage>
-        )}
-      </Content>
-    </Layout>
-  )
-}
+const App = () => (
+  <Layout>
+    <Content>
+      <Title>[Coins]</Title>
+      <Coins />
+    </Content>
+  </Layout>
+)
 
 export default App

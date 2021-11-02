@@ -8,7 +8,8 @@ const client = axios.create({ baseURL: 'https://api.coingecko.com/api/v3' })
 const CoinsContext = createContext({})
 export const CoinsProvider = ({ children }) => {
   const [coins, setCoins] = useState({
-    data: [],
+    ids: [],
+    data: {},
     details: {},
     state: ResourceState.PENDING
   });
@@ -19,7 +20,11 @@ export const CoinsProvider = ({ children }) => {
         const response = await client.get('coins/markets?vs_currency=eur&per_page=10')
         setCoins(prevCoins => ({
           ...prevCoins,
-          data: response.data,
+          ids: response.data.map(({ id }) => id),
+          data: response.data.reduce((data, nextCoin) => ({
+            ...data,
+            [nextCoin.id]: nextCoin
+          }), {}),
           state: ResourceState.SUCCESS
         }))
       } catch {
