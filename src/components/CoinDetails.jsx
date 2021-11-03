@@ -97,6 +97,7 @@ const DataSegment = ({ label, value }) => (
 const CoinDetails = ({ id }) => {
   const { coins: { details: { [id]: coinDetails } }, actions: { getDetails } } = useCoins()
 
+  // If coinDetails is not available then fetch it
   useEffect(() => {
     if (!coinDetails) {
       getDetails(id)
