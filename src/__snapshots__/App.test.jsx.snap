@@ -1,0 +1,293 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App should render correctly 1`] = `
+.c4 {
+  display: grid;
+  grid-template-columns: min-content 4rem 1fr 1fr 5rem;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas: "logo symbol name current high" "logo symbol name current low" "details details details details details";
+  -webkit-column-gap: 1rem;
+  column-gap: 1rem;
+  width: 100%;
+  padding: 0.5rem 1.25rem;
+  border-radius: 1rem;
+  color: #62616b;
+  background-color: #FCFCFC;
+  cursor: pointer;
+}
+
+.c5 {
+  grid-area: logo;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  height: 2.5rem;
+  width: 2.5rem;
+}
+
+.c6 {
+  grid-area: symbol;
+  justify-self: end;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  font-size: 1.25rem;
+}
+
+.c7 {
+  grid-area: name;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  font-size: 1.25rem;
+}
+
+.c8 {
+  grid-area: current;
+  justify-self: end;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  font-size: 1.25rem;
+}
+
+.c9 {
+  grid-area: high;
+  justify-self: start;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  font-size: 0.875rem;
+  color: #71B48D;
+}
+
+.c10 {
+  grid-area: low;
+  justify-self: start;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  font-size: 0.875rem;
+  color: #EEA081;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #ece9ec;
+  font-family: 'Roboto',sans-serif;
+}
+
+.c1 {
+  max-width: 768px;
+  width: 100%;
+  padding: 2rem 1rem;
+}
+
+.c2 {
+  margin-bottom: 1.25rem;
+  font-size: 4rem;
+  line-height: 1.25;
+  text-align: center;
+  color: #62616b;
+}
+
+@media (max-width:600px) {
+  .c4 {
+    grid-template-columns: 4rem 1fr 1fr;
+    grid-template-rows: repeat(4,auto);
+    grid-template-areas: "logo name high" "logo name current" "logo symbol current" "logo symbol low" "details details details";
+    padding: 1.25rem;
+  }
+}
+
+@media (max-width:600px) {
+  .c5 {
+    height: 4rem;
+    width: 4rem;
+  }
+}
+
+@media (max-width:600px) {
+  .c6 {
+    justify-self: start;
+    -webkit-align-self: start;
+    -ms-flex-item-align: start;
+    align-self: start;
+  }
+}
+
+@media (max-width:600px) {
+  .c7 {
+    -webkit-align-self: end;
+    -ms-flex-item-align: end;
+    align-self: end;
+  }
+}
+
+@media (max-width:600px) {
+  .c8 {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width:600px) {
+  .c9 {
+    justify-self: end;
+    -webkit-align-self: start;
+    -ms-flex-item-align: start;
+    align-self: start;
+  }
+}
+
+@media (max-width:600px) {
+  .c10 {
+    justify-self: end;
+    -webkit-align-self: end;
+    -ms-flex-item-align: end;
+    align-self: end;
+  }
+}
+
+<main
+  class="c0"
+>
+  <section
+    class="c1"
+  >
+    <h1
+      class="c2"
+    >
+      [Coins]
+    </h1>
+    <div
+      class="c3"
+      data-testid="coins-wrapper"
+    >
+      <div
+        class="c4"
+        data-testid="coin-wrapper"
+      >
+        <img
+          class="c5"
+          src="https://assets.coingecko.com/coins/images/1/large/bitcoin.png?1547033579"
+        />
+        <span
+          class="c6"
+        >
+          [btc]
+        </span>
+        <span
+          class="c7"
+        >
+          Bitcoin
+        </span>
+        <span
+          class="c8"
+        >
+          €54,712.00
+        </span>
+        <span
+          class="c9"
+        >
+          €54,796.00
+        </span>
+        <span
+          class="c10"
+        >
+          €52,164.00
+        </span>
+      </div>
+      <div
+        class="c4"
+        data-testid="coin-wrapper"
+      >
+        <img
+          class="c5"
+          src="https://assets.coingecko.com/coins/images/279/large/ethereum.png?1595348880"
+        />
+        <span
+          class="c6"
+        >
+          [eth]
+        </span>
+        <span
+          class="c7"
+        >
+          Ethereum
+        </span>
+        <span
+          class="c8"
+        >
+          €3,864.84
+        </span>
+        <span
+          class="c9"
+        >
+          €3,869.75
+        </span>
+        <span
+          class="c10"
+        >
+          €3,685.46
+        </span>
+      </div>
+      <div
+        class="c4"
+        data-testid="coin-wrapper"
+      >
+        <img
+          class="c5"
+          src="https://assets.coingecko.com/coins/images/825/large/binance-coin-logo.png?1547034615"
+        />
+        <span
+          class="c6"
+        >
+          [bnb]
+        </span>
+        <span
+          class="c7"
+        >
+          Binance Coin
+        </span>
+        <span
+          class="c8"
+        >
+          €478.33
+        </span>
+        <span
+          class="c9"
+        >
+          €478.36
+        </span>
+        <span
+          class="c10"
+        >
+          €460.00
+        </span>
+      </div>
+    </div>
+  </section>
+</main>
+`;

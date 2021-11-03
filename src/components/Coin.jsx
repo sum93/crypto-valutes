@@ -120,7 +120,7 @@ const Coin = ({ id }) => {
   }
 
   return (
-    <CoinWrapper onClick={handleClick}>
+    <CoinWrapper onClick={handleClick} data-testid="coin-wrapper">
       <CoinLogo src={coin.image} />
       <CoinSymbol>{`[${coin.symbol}]`}</CoinSymbol>
       <CoinName>{coin.name}</CoinName>

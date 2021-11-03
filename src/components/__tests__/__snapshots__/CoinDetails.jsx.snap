@@ -1,0 +1,202 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<CoinDetails /> should render correctly 1`] = `
+.c0 {
+  grid-area: details;
+  display: grid;
+  grid-template-columns: repeat(3,1fr) auto;
+  grid-template-areas: ". . . link" "description description description description";
+  gap: 1rem;
+  padding-top: 1rem;
+}
+
+.c5 {
+  grid-area: description;
+  text-align: justify;
+}
+
+.c4 {
+  grid-area: link;
+  justify-self: end;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.c2 {
+  color: #978897;
+  font-size: 0.75rem;
+}
+
+.c3 {
+  font-size: 1.25rem;
+}
+
+@media (max-width:600px) {
+  .c0 {
+    grid-template-columns: auto;
+    grid-template-areas: "." "." "." "description" "link";
+  }
+}
+
+@media (max-width:600px) {
+  .c4 {
+    justify-self: center;
+  }
+}
+
+@media (max-width:600px) {
+  .c1 {
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+}
+
+@media (max-width:600px) {
+  .c2 {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width:600px) {
+  .c3 {
+    font-size: 1rem;
+  }
+}
+
+<div
+  class="c0"
+  data-testid="coin-details"
+>
+  <div
+    class="c1"
+  >
+    <div
+      class="c2"
+    >
+      Market Cap
+    </div>
+    <div
+      class="c3"
+    >
+      €1,027,096,492,610.00
+    </div>
+  </div>
+  <div
+    class="c1"
+  >
+    <div
+      class="c2"
+    >
+      Hashing Algorithm
+    </div>
+    <div
+      class="c3"
+    >
+      SHA-256
+    </div>
+  </div>
+  <div
+    class="c1"
+  >
+    <div
+      class="c2"
+    >
+      Genesis Date
+    </div>
+    <div
+      class="c3"
+    >
+      03/01/2009
+    </div>
+  </div>
+  <a
+    class="c4"
+    href="http://www.bitcoin.org"
+    target="_blank"
+  >
+    Homepage
+  </a>
+  <div
+    class="c5"
+  >
+    Bitcoin is the first successful internet money based on peer-to-peer technology; whereby no central bank or authority is involved in the transaction and production of the Bitcoin currency. It was created by an anonymous individual/group under the name, Satoshi Nakamoto. The source code is available publicly as an open source project, anybody can look at it and be part of the developmental process.
+
+Bitcoin is changing the way we see money as we speak. The idea was to produce a means of exchange, independent of any central authority, that could be transferred electronically in a secure, verifiable and immutable way. It is a decentralized peer-to-peer internet currency making mobile payment easy, very low transaction fees, protects your identity, and it works anywhere all the time with no central authority and banks.
+
+Bitcoin is designed to have only 21 million BTC ever created, thus making it a deflationary currency. Bitcoin uses the 
+    <a
+      href="https://www.coingecko.com/en?hashing_algorithm=SHA-256"
+    >
+      SHA-256
+    </a>
+     hashing algorithm with an average transaction confirmation time of 10 minutes. Miners today are mining Bitcoin using ASIC chip dedicated to only mining Bitcoin, and the hash rate has shot up to peta hashes.
+
+Being the first successful online cryptography currency, Bitcoin has inspired other alternative currencies such as 
+    <a
+      href="https://www.coingecko.com/en/coins/litecoin"
+    >
+      Litecoin
+    </a>
+    , 
+    <a
+      href="https://www.coingecko.com/en/coins/peercoin"
+    >
+      Peercoin
+    </a>
+    , 
+    <a
+      href="https://www.coingecko.com/en/coins/primecoin"
+    >
+      Primecoin
+    </a>
+    , and so on.
+
+The cryptocurrency then took off with the innovation of the turing-complete smart contract by 
+    <a
+      href="https://www.coingecko.com/en/coins/ethereum"
+    >
+      Ethereum
+    </a>
+     which led to the development of other amazing projects such as 
+    <a
+      href="https://www.coingecko.com/en/coins/eos"
+    >
+      EOS
+    </a>
+    , 
+    <a
+      href="https://www.coingecko.com/en/coins/tron"
+    >
+      Tron
+    </a>
+    , and even crypto-collectibles such as 
+    <a
+      href="https://www.coingecko.com/buzz/ethereum-still-king-dapps-cryptokitties-need-1-billion-on-eos"
+    >
+      CryptoKitties
+    </a>
+    .
+  </div>
+</div>
+`;

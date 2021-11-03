@@ -104,15 +104,15 @@ const CoinDetails = ({ id }) => {
   }, [coinDetails, getDetails, id])
 
   if (!coinDetails || coinDetails.state === ResourceState.PENDING) {
-    return <LoadingMessage>Loading...</LoadingMessage>
+    return <LoadingMessage data-testid="coin-details--loading">Loading...</LoadingMessage>
   }
 
   if (coinDetails.state === ResourceState.ERROR) {
-    return <ErrorMessage>There was an error loading the details.</ErrorMessage>
+    return <ErrorMessage data-testid="coin-details--error">There was an error loading the details.</ErrorMessage>
   }
 
   return (
-    <CoinDetailsWrapper>
+    <CoinDetailsWrapper data-testid="coin-details">
       <DataSegment
         label="Market Cap"
         value={currencyFormatter.format(coinDetails.data.market_data.market_cap.eur)} />

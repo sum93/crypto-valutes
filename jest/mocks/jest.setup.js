@@ -1,4 +1,5 @@
 import '@testing-library/jest-dom'
+import 'jest-styled-components'
 
 import { server } from '../../src/test-utils'
 

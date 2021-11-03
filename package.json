@@ -6,7 +6,9 @@
     "build": "vite build",
     "serve": "vite preview",
     "test": "jest -env=jsdom",
+    "test:update": "jest -env=jsdom -u",
     "test:watch": "jest -env=jsdom --watch",
+    "test:coverage": "jest -env=jsdom --coverage",
     "eslint": "eslint src --ext .js,.jsx",
     "eslint:fix": "eslint src --ext .js,.jsx --fix"
   },
@@ -40,6 +42,7 @@
     "eslint-plugin-react-hooks": "^4.2.0",
     "eslint-plugin-testing-library": "^5.0.0",
     "jest": "^27.3.1",
+    "jest-styled-components": "^7.0.5",
     "jest-watch-typeahead": "^1.0.0",
     "msw": "^0.35.0",
     "react-test-renderer": "^17.0.2",
